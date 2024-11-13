@@ -1,0 +1,19 @@
+{
+    "name": "Lighting Control",
+    "short_name": "Lighting",
+    "description": "A fullscreen lighting control tool",
+    "start_url": "index.html",
+    "display": "fullscreen",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "icons": [
+        {
+            "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABISURBVFhH7dexDQAgDANB9l+aDBD5G1ApkO5KV7jxY0lzGbD9VXRH0R1FdxTdUXRH0R1FdxTdUXRH0R1FdxTdUXRH0R1F96QBSQdYsQwKs1rHXAAAAABJRU5ErkJggg==",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "permissions": [
+        "screen-brightness"
+    ]
+}

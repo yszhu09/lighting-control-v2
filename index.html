@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Fullscreen Lighting Tool</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="m-0 p-0 h-screen w-screen overflow-hidden">
+    <!-- Main background -->
+    <div id="lightingBackground" class="fixed inset-0 w-screen h-screen transition-colors duration-300"></div>
+
+    <!-- Floating controls panel -->
+    <div class="control-panel fixed top-4 right-4 bg-white/80 backdrop-blur-sm p-4 rounded-lg shadow-lg transition-opacity duration-300 hover:bg-white/95">
+        <div class="space-y-4">
+            <h2 class="text-lg font-semibold text-gray-800">补光控制</h2>
+            
+            <!-- Color Picker Section -->
+            <div class="space-y-2">
+                <label class="block text-sm font-medium text-gray-700">颜色</label>
+                <input 
+                    type="color" 
+                    id="colorPicker"
+                    class="h-10 w-full cursor-pointer rounded border border-gray-300"
+                    value="#ffffff"
+                >
+            </div>
+
+            <!-- Color Brightness Slider Section -->
+            <div class="space-y-2">
+                <label class="block text-sm font-medium text-gray-700">颜色亮度</label>
+                <input 
+                    type="range" 
+                    id="brightnessSlider"
+                    class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                    min="0" 
+                    max="100" 
+                    value="100"
+                >
+                <div class="text-sm text-gray-500 text-right">
+                    <span id="brightnessValue">100</span>%
+                </div>
+            </div>
+
+            <!-- System Brightness Slider Section (Mobile Only) -->
+            <div id="systemBrightnessContainer" class="space-y-2">
+                <label class="block text-sm font-medium text-gray-700">系统亮度</label>
+                <input 
+                    type="range" 
+                    id="systemBrightnessSlider"
+                    class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                    min="0" 
+                    max="100" 
+                    value="100"
+                >
+                <div class="text-sm text-gray-500 text-right">
+                    <span id="systemBrightnessValue">100</span>%
+                </div>
+                <div class="text-xs text-gray-500">
+                    * 系统亮度控制仅在移动设备上可用
+                </div>
+            </div>
+
+            <!-- Fullscreen Button -->
+            <button 
+                id="fullscreenButton"
+                class="w-full px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+            >
+                进入全屏
+            </button>
+
+            <!-- Preset Colors -->
+            <div class="space-y-2">
+                <label class="block text-sm font-medium text-gray-700">预设颜色</label>
+                <div class="grid grid-cols-4 gap-2">
+                    <button class="preset-color w-full h-8 rounded-md" style="background-color: #ffffff" data-color="#ffffff"></button>
+                    <button class="preset-color w-full h-8 rounded-md" style="background-color: #ffcdd2" data-color="#ffcdd2"></button>
+                    <button class="preset-color w-full h-8 rounded-md" style="background-color: #fff9c4" data-color="#fff9c4"></button>
+                    <button class="preset-color w-full h-8 rounded-md" style="background-color: #c8e6c9" data-color="#c8e6c9"></button>
+                </div>
+            </div>
+
+            <!-- Keyboard Shortcuts Info -->
+            <div class="text-xs text-gray-500 mt-4">
+                快捷键:<br>
+                ↑/↓: 调节颜色亮度<br>
+                Shift + ↑/↓: 调节系统亮度 (仅移动端)
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
